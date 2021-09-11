@@ -89,13 +89,13 @@ namespace SadovikovPi202_laba0
                 var filepath = @"C:\Sadovikov_lab0\csvtable.csv";
 
                 using (StreamWriter writer = new StreamWriter(new FileStream(filepath, FileMode.Create, FileAccess.Write), Encoding.Default))
-                {
+                {    
 
                     for (int i = 0; i < Convert.ToInt32(textBox1.Text); i++)
                     {
                         writer.WriteLine(String.Format("{0},{1},{2}", RandomGeneratorName(5, true), rnd.Next(1000, 9999), rnd.Next(1000, 9999)));
                     }
-                }
+                    }
             }
         }
 
