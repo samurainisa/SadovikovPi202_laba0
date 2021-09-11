@@ -39,7 +39,6 @@ namespace SadovikovPi202_laba0
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -67,7 +66,6 @@ namespace SadovikovPi202_laba0
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(120, 23);
             this.textBox5.TabIndex = 5;
-
             // 
             // label2
             // 
@@ -151,7 +149,6 @@ namespace SadovikovPi202_laba0
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(366, 161);
             this.dataGridView1.TabIndex = 22;
-
             // 
             // textBox1
             // 
@@ -159,7 +156,6 @@ namespace SadovikovPi202_laba0
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 23);
             this.textBox1.TabIndex = 23;
-
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
             // label8
@@ -170,7 +166,6 @@ namespace SadovikovPi202_laba0
             this.label8.Size = new System.Drawing.Size(133, 15);
             this.label8.TabIndex = 24;
             this.label8.Text = "Количество абонентов";
-
             // 
             // button3
             // 
@@ -188,7 +183,6 @@ namespace SadovikovPi202_laba0
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 23);
             this.textBox2.TabIndex = 26;
-
             this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
             // textBox3
@@ -197,7 +191,6 @@ namespace SadovikovPi202_laba0
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 23);
             this.textBox3.TabIndex = 27;
-
             this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
             // 
             // textBox4
@@ -206,7 +199,6 @@ namespace SadovikovPi202_laba0
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 23);
             this.textBox4.TabIndex = 28;
-
             this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
             // 
             // textBox6
@@ -215,7 +207,6 @@ namespace SadovikovPi202_laba0
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(100, 23);
             this.textBox6.TabIndex = 29;
-
             this.textBox6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
             // Form1
@@ -243,7 +234,6 @@ namespace SadovikovPi202_laba0
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Main form";
-
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -262,7 +252,6 @@ namespace SadovikovPi202_laba0
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button2;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label8;

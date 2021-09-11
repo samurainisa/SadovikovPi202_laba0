@@ -88,14 +88,13 @@ namespace SadovikovPi202_laba0
                 Random rnd = new Random();
                 var filepath = @"C:\Sadovikov_lab0\csvtable.csv";
 
-                using (StreamWriter writer = new StreamWriter(new FileStream(filepath, FileMode.Create, FileAccess.Write), Encoding.Default))
-                {    
+                using StreamWriter writer = new StreamWriter(new FileStream(filepath, FileMode.Create, FileAccess.Write), Encoding.Default);
 
-                    for (int i = 0; i < Convert.ToInt32(textBox1.Text); i++)
-                    {
-                        writer.WriteLine(String.Format("{0},{1},{2}", RandomGeneratorName(5, true), rnd.Next(1000, 9999), rnd.Next(1000, 9999)));
-                    }
-                    }
+                for (int i = 0; i < Convert.ToInt32(textBox1.Text); i++)
+                {
+
+                    writer.WriteLine(String.Format("{0},{1},{2}", RandomGeneratorName(5, true), rnd.Next(1000, 9999), rnd.Next(1000, 9999)));
+                }
             }
         }
 
@@ -103,6 +102,7 @@ namespace SadovikovPi202_laba0
         public string RandomGeneratorName(int length, bool name)
         {
             RandomNumberGenerator rng = RandomNumberGenerator.Create();
+            rng.Dispose();
             char[] chars = new char[length];
             string validCharsLower = "abcdefghijklmnopqrstuvwxyz";
             string validCharsHigher = "ABCEDFGHIJKLMNOPQRSTUVWXYZ";
@@ -122,7 +122,6 @@ namespace SadovikovPi202_laba0
                     Random rnd = new Random(bytes[0]);
                     chars[i] = validCharsLower[rnd.Next(0, validCharsLower.Length - 1)];
                 }
-
             }
             return (new string(chars));
         }
@@ -141,12 +140,14 @@ namespace SadovikovPi202_laba0
             DataSet dataset = new DataSet();
             StreamReader sr = new StreamReader(fileName);
 
+
             dataset.Tables.Add(tableName);
             dataset.Tables[tableName].Columns.Add("Surname");
             dataset.Tables[tableName].Columns.Add("Number");
             dataset.Tables[tableName].Columns.Add("Date");
 
             string allData = sr.ReadToEnd();
+            sr.Dispose();
             string[] rows = allData.Split("\r".ToCharArray());
 
             foreach(string r in rows)
@@ -157,28 +158,28 @@ namespace SadovikovPi202_laba0
                 string[] items = r.Split(delimiter.ToCharArray());
                 string yy = items[1].Substring(2, 2);
                 string bb = items[2].Substring(2, 2);
-                if (yy == bb)
-     
-                    dataset.Tables[tableName].Rows.Add(items);
-
+                if (yy == bb) 
+                   dataset.Tables[tableName].Rows.Add(items);
+               
             }
             this.dataGridView1.DataSource = dataset.Tables[0].DefaultView;
+
         }
 
         private void textBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             char number = e.KeyChar;
-            if (!Char.IsDigit(number) && number != 8) // цифры и клавиша BackSpace
+            if (!Char.IsDigit(number) && number != 8) 
             {
                 e.Handled = true;
-          }
-       }
+            }
+        }
 
 
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
             char number = e.KeyChar;
-            if (!Char.IsDigit(number) && number != 8) // цифры и клавиша BackSpace
+            if (!Char.IsDigit(number) && number != 8) 
             {
                 e.Handled = true;
             }
@@ -187,7 +188,7 @@ namespace SadovikovPi202_laba0
         private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
         {
             char number = e.KeyChar;
-            if (!Char.IsDigit(number) && number != 8) // цифры и клавиша BackSpace
+            if (!Char.IsDigit(number) && number != 8) 
             {
                 e.Handled = true;
             }
@@ -196,7 +197,7 @@ namespace SadovikovPi202_laba0
         private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
         {
             char number = e.KeyChar;
-            if (!Char.IsDigit(number) && number != 8) // цифры и клавиша BackSpace
+            if (!Char.IsDigit(number) && number != 8)
             {
                 e.Handled = true;
             }
