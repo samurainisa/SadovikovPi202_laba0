@@ -136,6 +136,10 @@ namespace SadovikovPi202_laba0
             string delimiter = ",";
             string tableName = "abonents";
             string fileName = ("C:\\Sadovikov_lab0\\csvtable.csv");
+            if (!Directory.Exists(fileName))
+            {
+                Directory.CreateDirectory(fileName);
+            }
 
             DataSet dataset = new DataSet();
             StreamReader sr = new StreamReader(fileName);
