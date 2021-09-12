@@ -147,6 +147,7 @@ namespace SadovikovPi202_laba0
             dataset.Tables[tableName].Columns.Add("Date");
 
             string allData = sr.ReadToEnd();
+            sr.Dispose();
             string[] rows = allData.Split("\r".ToCharArray());
 
             foreach(string r in rows)
